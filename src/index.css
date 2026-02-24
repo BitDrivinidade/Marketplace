@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 45 40% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 45 40% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 45 40% 90%;
+    --primary: 45 60% 50%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 40% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 20% 60%;
+    --accent: 45 60% 50%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 45 60% 50%;
+    --radius: 0.8rem;
+    --gold-primary: #c9a962;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    @apply antialiased bg-[#0A0A0A] text-[#E8E0C8];
+    min-height: 100vh;
+  }
+}
+
+.ambient-bg {
+  background: linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #c9a962 0%, #dcbf73 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #c9a962 0%, #d4af37 100%);
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.04);
+}
+
+.card-hover {
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+[data-radix-dialog-content] {
+  animation: fadeUp 0.16s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343434;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a962;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.h-safe-area-inset-bottom {
+  height: env(safe-area-inset-bottom, 0px);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
